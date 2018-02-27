@@ -7,7 +7,7 @@ import 'zone.js/dist/zone';
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { ApplicationModule } from './application/app.module';
+import { AppModule } from './app/app.module';
 
 if (process.env.NODE_ENV === 'production') {
   enableProdMode();
@@ -16,5 +16,5 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 if (process.env.NODE_ENV !== 'test') {
-    platformBrowserDynamic().bootstrapModule(ApplicationModule);
+    platformBrowserDynamic().bootstrapModule(AppModule);
 }

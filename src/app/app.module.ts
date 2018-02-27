@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { routing } from '../routes/routes';
-import { ApplicationComponent } from './application.component';
+import { AppComponent } from './app.component';
 import { HomeModule } from '../containers/home/home.module';
 
 
@@ -22,12 +22,12 @@ import { HomeModule } from '../containers/home/home.module';
     HomeModule
   ],
   declarations: [
-    ApplicationComponent
+    AppComponent
   ],
   exports: [
-    ApplicationComponent
+    AppComponent
   ],
   providers: [ ],
-  bootstrap: [ ApplicationComponent]
+  bootstrap: [ AppComponent]
 })
-export class ApplicationModule { }
+export class AppModule { }

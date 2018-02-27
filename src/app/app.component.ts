@@ -12,14 +12,14 @@ import { Router, NavigationEnd } from '@angular/router';
  * This is the parent component of the project which will be user to drive the project
  */
 @Component({
-  selector: 'exp-application',
+  selector: 'app',
   // Global styles imported in the app component.
   encapsulation: ViewEncapsulation.None,
-  template: require('./application.html'),
-  styles: [require('./application.css')],
+  template: require('./app.component.html'),
+  styles: [require('./app.component.css')],
 })
 
-export class ApplicationComponent {
+export class AppComponent {
 
   constructor(public router: Router) {
     }
