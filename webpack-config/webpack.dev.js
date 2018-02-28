@@ -15,9 +15,8 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 */
 const DEFAULT_NODE_ENV = "development";
 
-module.exports = function (options) {
-  var node_env = options.env || DEFAULT_NODE_ENV;
-  return webpackMerge(commonConfig({env: node_env}), {
+module.exports = function (config) {
+  return webpackMerge(commonConfig(config), {
 
     devtool: 'inline-source-map',
 

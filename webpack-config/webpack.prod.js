@@ -20,17 +20,17 @@ const BrotliPlugin = require("brotli-webpack-plugin");
 */
 const DEFAULT_NODE_ENV = "production";
 
-module.exports = function (options) {
-  var node_env = options.env || DEFAULT_NODE_ENV;
+module.exports = function (config) {
+  // var node_env = options.env || DEFAULT_NODE_ENV;
 
-  return webpackMerge(commonConfig({ env: node_env}), {
+  return webpackMerge(commonConfig(config), {
     devtool: 'cheap-module-source-map',
     output: {
       path: path.join(__dirname, '../build'),
       filename: '[name].[hash].js',
       sourceMapFilename: '[name].js.map',
       publicPath: '/',
-      chunkFilename: '[name].chunk.js'
+      chunkFilename: '[name].chunk.[hash].js'
     },
 
     /**
@@ -66,6 +66,9 @@ module.exports = function (options) {
           warnings: false
         },
         minimize: true,
+        output: {
+          comment: false
+        }
       }),
     ]
   });
