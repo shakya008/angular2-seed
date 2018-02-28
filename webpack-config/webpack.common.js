@@ -63,7 +63,7 @@ module.exports = function (options) {
         },
         {
           test: /\.ts$/,
-          loaders: ['awesome-typescript-loader', 'angular2-template-loader', 'angular-router-loader'],
+          loaders: ['awesome-typescript-loader', 'angular2-template-loader', 'angular2-router-loader'],
           exclude: /node_modules/
         },
 

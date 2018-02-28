@@ -4,14 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 
 
-import { ApplicationComponent } from './application.component';
+import { AppComponent } from './app.component';
 
-let compInstance: ApplicationComponent;
-let fixture: ComponentFixture<ApplicationComponent>;
+let compInstance: AppComponent;
+let fixture: ComponentFixture<AppComponent>;
 let el: HTMLElement;
 const oldResetTestingModule = TestBed.resetTestingModule;
 
-describe('Component : ApplicationComponent', () => {
+describe('Component : AppComponent', () => {
   afterAll(() => {
       TestBed.resetTestingModule = oldResetTestingModule;
       TestBed.resetTestingModule();
@@ -26,7 +26,7 @@ describe('Component : ApplicationComponent', () => {
             HttpModule
         ],
         declarations: [
-          ApplicationComponent,
+          AppComponent,
         ],
         providers: [ ]
     });
@@ -34,7 +34,7 @@ describe('Component : ApplicationComponent', () => {
     TestBed.resetTestingModule = () => TestBed;
   });
   beforeEach(() => {
-      fixture = TestBed.createComponent(ApplicationComponent);
+      fixture = TestBed.createComponent(AppComponent);
       compInstance = fixture.componentInstance;
   });
   it('should inject the component', () => {
