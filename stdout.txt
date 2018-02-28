@@ -1,0 +1,4 @@
+info: Enabling proxy /rest/api/ =>  target=http://localhost:8080/rest/api, changeOrigin=false
+info: Enabling proxy /do/ =>  target=http://localhost:8080/do, changeOrigin=false
+info: Enabling proxy /admin/ =>  target=http://localhost:8080/admin, changeOrigin=false
+info: Listening on port 3333

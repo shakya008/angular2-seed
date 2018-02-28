@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component } from '@angular/core';
 
 /**
  * @class
@@ -6,7 +6,7 @@ import { Component } from '@angular/core'
  */
 @Component({
   selector: 'home-page',
-  template: require('./home-page.html')
+  template: './home-page.html'
 })
 
 export class HomeComponent {

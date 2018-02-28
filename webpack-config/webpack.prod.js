@@ -15,13 +15,8 @@ const SplitByPathPlugin = require('webpack-split-by-path');
 const OptimizeJsPlugin = require('optimize-js-plugin');
 const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const BrotliPlugin = require("brotli-webpack-plugin");
-/**
-* Defaut node environment for this script
-*/
-const DEFAULT_NODE_ENV = "production";
 
 module.exports = function (config) {
-  // var node_env = options.env || DEFAULT_NODE_ENV;
 
   return webpackMerge(commonConfig(config), {
     devtool: 'cheap-module-source-map',
@@ -67,7 +62,7 @@ module.exports = function (config) {
         },
         minimize: true,
         output: {
-          comment: false
+          comments: false
         }
       }),
     ]

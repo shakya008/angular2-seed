@@ -15,7 +15,7 @@ import { Router, NavigationEnd } from '@angular/router';
   selector: 'app',
   // Global styles imported in the app component.
   encapsulation: ViewEncapsulation.None,
-  template: require('./app.component.html'),
+  templateUrl: './app.component.html',
   styles: [require('./app.component.css')],
 })
 

@@ -9,7 +9,25 @@ const webpack = require('webpack');
 const CheckerPlugin = require('awesome-typescript-loader').CheckerPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
+const AotPlugin = require('@ngtools/webpack').AotPlugin;
+const AngularCompilerPlugin = require('@ngtools/webpack').AngularCompilerPlugin;
+const AOT = process.env.AOT;
+const aotLoader = {test: /\.ts$/, loaders: ['@ngtools/webpack'] , exclude : /\.test\.ts$/};
+const jitLoaders = {
+          test: /\.ts$/,
+          loaders: [
+          'awesome-typescript-loader',
+          'angular2-template-loader',
+          'angular2-router-loader'
+        ],
+          exclude: [path.join(__dirname, "../node_modules")]
+        };
+const aotPlugin = new AngularCompilerPlugin({
+                tsConfigPath: path.join(__dirname,'../tsconfig.aot.json'),
+                entryModule: 'src/app/app.module#AppModule'
+            });
+const tsLoaders = AOT ? [aotLoader] : [jitLoaders];
+console.log(tsLoaders);
 /**
  * Webpack configuration
  */
@@ -61,11 +79,7 @@ module.exports = function (options) {
           loader: 'raw-loader',
           exclude: /node_modules/
         },
-        {
-          test: /\.ts$/,
-          loaders: ['awesome-typescript-loader', 'angular2-template-loader', 'angular2-router-loader'],
-          exclude: /node_modules/
-        },
+        ...tsLoaders,
 
         {
           test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -125,7 +139,7 @@ module.exports = function (options) {
         jQuery: "jquery",
         "window.jQuery": "jquery"
       })
-    ],
+    ].concat(AOT ? [aotPlugin] : []),
 
     node: {
       net: 'empty',
