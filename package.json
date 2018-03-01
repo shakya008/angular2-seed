@@ -23,7 +23,9 @@
     "start": "webpack-dev-server --inline --port=3334 --content-base build/",
     "test": "node --max-old-space-size=4096 ./node_modules/karma/bin/karma start karma.conf.js --singleRun true",
     "test:watch": "node --max-old-space-size=8192 ./node_modules/karma/bin/karma start karma.conf.js --singleRun false",
-    "tslint-count": "npm run lint-ts | wc -l"
+    "tslint-count": "npm run lint-ts | wc -l",
+    "stats": "cross-env AOT=true NODE_ENV=production webpack --profile --json > build/stats.json",
+    "bundle-report": "npm run stats;webpack-bundle-analyzer build/stats.json"
   },
   "dependencies": {
     "@angular/animations": "^5.0.1",
@@ -130,6 +132,7 @@
     "typescript": "2.5.3",
     "uglify-es": "^3.1.5",
     "webpack": "^3.6.0",
+    "webpack-bundle-analyzer": "^2.11.0",
     "webpack-dev-server": "^2.9.1",
     "webpack-merge": "^4.1.0",
     "webpack-split-by-path": "^2.0.0"
