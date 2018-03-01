@@ -34,7 +34,6 @@
 /*@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);*/
 @import './variables';
 @import './utilities';
-@import '../assets/print/print.css';
 
 body{
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
