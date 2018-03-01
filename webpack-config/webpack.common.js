@@ -27,7 +27,6 @@ const aotPlugin = new AngularCompilerPlugin({
                 entryModule: 'src/app/app.module#AppModule'
             });
 const tsLoaders = AOT ? [aotLoader] : [jitLoaders];
-console.log(tsLoaders);
 /**
  * Webpack configuration
  */
@@ -57,13 +56,6 @@ module.exports = function (options) {
             path.join(__dirname, "../node_modules"),
             path.join(__dirname, "../build")
           ]
-        },
-        {
-          test: /^(?!.*\.spec\.js$).*\.js$/,
-          exclude: /node_modules/,
-          use: [
-            'babel-loader',
-          ],
         },
         {
           test: /\.css$/,

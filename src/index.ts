@@ -1,8 +1,4 @@
-import 'babel-polyfill';
-import 'core-js/es6';
-import 'core-js/es7/reflect';
-import 'ts-helpers';
-import 'zone.js/dist/zone';
+import './polyfills.browser';
 
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
