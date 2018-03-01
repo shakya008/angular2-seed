@@ -1,0 +1,2 @@
+Error: ENOENT: no such file or directory, stat '/home/anil/projects/angular2-seed/build/index.html'
+    at Error (native)

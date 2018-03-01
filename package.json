@@ -10,7 +10,7 @@
     "compodoc": "./node_modules/.bin/compodoc src -p ./tsconfig.json",
     "cover": "istanbul report --include=**/chrome/coverage-final.json text text-summary",
     "dev": "cross-env NODE_ENV=development webpack-dev-server -d --inline --hot --progress --no-info",
-    "stopServer": "sh ./killNode.sh",
+    "stopServer": "sh ./stopServer.sh",
     "lint": "npm run lint-ts && npm run lint-css",
     "lint-css": "stylelint './src/**/*.css';true",
     "lint-ts": "tslint 'src/**/*.ts';true",
