@@ -10,11 +10,6 @@ const webpack = require('webpack');
 const path = require('path');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
-/**
-* Defaut node environment for this script
-*/
-const DEFAULT_NODE_ENV = "development";
-
 module.exports = function (config) {
   return webpackMerge(commonConfig(config), {
 

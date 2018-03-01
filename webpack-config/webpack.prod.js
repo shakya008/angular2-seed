@@ -17,7 +17,6 @@ const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const BrotliPlugin = require("brotli-webpack-plugin");
 
 module.exports = function (config) {
-
   return webpackMerge(commonConfig(config), {
     devtool: 'cheap-module-source-map',
     output: {
