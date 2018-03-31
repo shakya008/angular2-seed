@@ -13,7 +13,7 @@ const nodeAppServer = require('./node-app-server');
  */
 
 const app = express();
-const PORT = process.env.PORT || 3333;
+const PORT = process.env.PORT || 5000;
 
 // Enable vaWebus security helpers.
 app.use(helmet());
